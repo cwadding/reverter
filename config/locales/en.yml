@@ -1,0 +1,21 @@
+en:
+  reverter:
+    links:
+      undo: "undo"
+      redo: "redo"
+    flash:
+      notice:
+        one: '%{model} was successfully %{verb}.'
+        other: '%{count} %{model} were successfully %{verb}.'
+      undo:
+        one: "Undid %{verb}. %{link}"
+      redo:
+        one: "Redid %{verb}. %{link}"
+      error: "Unable to %{verb} %{model}."
+    actions:
+      past-tense:
+        create: "created"
+        update: "updated"
+        destroy: "destroyed"
+        multiple: "destroyed"
+        add: "added"
