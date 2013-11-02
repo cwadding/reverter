@@ -9,14 +9,17 @@ class PostsController < ApplicationController
 	end
 
 	def multiple
-		@posts = Post.find(params[:posts].keys)
+		@posts = Post.find(multiple_params.keys)
 		@posts.map(&:destroy)
 		flash[:notice] = flash_notice(@posts)
 		render :nothing => true
 	end
     private
       # Never trust parameters from the scary internet, only allow the white list through.
-      def post_params
-      	params.permit(:post, :posts)
+      def multiple_params
+      	params.require(:posts).permit!
       end
+      def post_params
+      	params.require(:post).permit!
+      end      
 end

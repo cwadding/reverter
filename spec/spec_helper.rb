@@ -5,6 +5,7 @@ require File.expand_path("../app/config/environment.rb",  __FILE__)
 require "rails/test_help"
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'paper_trail/frameworks/rspec'
 # require 'database_cleaner'
 
 Rails.backtrace_cleaner.remove_silencers!

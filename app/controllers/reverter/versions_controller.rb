@@ -5,7 +5,7 @@ module Reverter
     
     def revert
       options= {:class => "btn btn-mini btn-danger", form_class: "pull-right"}
-      @version = Version.find(params[:id])
+      @version = PaperTrail::Version.find(params[:id])
       if @version.reify
         @version.reify.save!
       else

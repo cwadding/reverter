@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Reverter::VersionsController do
+describe Reverter::VersionsController, :versioning => true do
 
   def valid_session
     {}
@@ -16,7 +16,7 @@ describe Reverter::VersionsController do
         @post = Post.last
         @post.name = "NewRuleName"
         @post.save
-        @version = Version.last
+        @version = PaperTrail::Version.last
       end
       it "assign the requested version @version" do
         # Trigger the behavior that occurs when invalid params are submitted
@@ -61,7 +61,7 @@ describe Reverter::VersionsController do
     
     context "from a create" do
       before(:each) do
-        @version = Version.last
+        @version = PaperTrail::Version.last
       end
       it "destroys the reverted version" do
         Post.any_instance.should_receive(:destroy)

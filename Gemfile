@@ -11,5 +11,4 @@ gemspec
 # your gem to rubygems.org.
 
 # To use debugger
-gem 'debugger'
-gem 'paper_trail', git: "git://github.com/airblade/paper_trail.git", branch: "rails4"
+# gem 'debugger'

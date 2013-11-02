@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PostsController do
+describe PostsController, :versioning => true do
 
 	describe "#flash_notice" do
 		context "with collection" do
